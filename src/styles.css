@@ -194,7 +194,7 @@ kbd {
   background: radial-gradient(circle at 50% 45%, #16294a 0%, #070d18 75%);
   animation: fadeIn 0.4s ease;
 }
-.mouth-svg { height: 96%; max-width: 96%; }
+.mouth-svg { width: 100%; height: 100%; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 .patient-card {
@@ -382,6 +382,7 @@ kbd {
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
+  .scene-frame { aspect-ratio: auto; height: 320px; min-height: 0; }
   .hero { flex-direction: column; text-align: center; }
   .hero-tagline { margin: 0 auto; }
   .tags, .hero-actions { justify-content: center; }

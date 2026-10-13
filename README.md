@@ -1,4 +1,4 @@
-# Dental Detective 3D — Aurora Dental Clinic
+# Dental Detective 3D — Clínica Dr Baselga
 
 Original-IP dental diagnosis puzzle game (Vite + React + TypeScript, no backend).
 

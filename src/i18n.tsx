@@ -5,7 +5,7 @@ export type Lang = 'en' | 'es';
 
 const STRINGS = {
   appTitle: { en: 'Dental Detective 3D', es: 'Dental Detective 3D' },
-  clinicName: { en: 'Aurora Dental Clinic', es: 'Clínica Dental Aurora' },
+  clinicName: { en: 'Clínica Dr Baselga', es: 'Clínica Dr Baselga' },
   author: { en: 'Jon Peciña', es: 'Jon Peciña' },
   tagline: {
     en: 'Examine dental patients, decode deceptive clues, and choose the right treatment to cure tricky teeth and rack up points.',
@@ -28,11 +28,11 @@ const STRINGS = {
   hideSymptoms: { en: 'Hide symptoms', es: 'Ocultar síntomas' },
   showSymptoms: { en: 'Show symptoms', es: 'Mostrar síntomas' },
   examine: { en: 'Examine mouth', es: 'Examinar boca' },
-  welcomeTitle: { en: 'AURORA DENTAL CLINIC', es: 'CLÍNICA DENTAL AURORA' },
+  welcomeTitle: { en: 'CLÍNICA DR BASELGA', es: 'CLÍNICA DR BASELGA' },
   welcomeSubtitle: { en: 'DENTAL DETECTIVE 3D', es: 'DENTAL DETECTIVE 3D' },
   welcomeText1: {
-    en: 'Welcome to the Aurora Dental Clinic. Treat 15 different patients with their 15 unique symptoms and 15 specialized clinical clues. Examine their teeth with the 3-step zoom (press E).',
-    es: 'Bienvenido a la Clínica Dental Aurora. Atiende a 15 pacientes distintos con sus 15 síntomas únicos y 15 pistas clínicas especializadas. Examina su dentadura con el zoom de 3 pasos (pulsa E).',
+    en: 'Welcome to the Dr Baselga Clinic. Treat 15 different patients with their 15 unique symptoms and 15 specialized clinical clues. Examine their teeth with the 3-step zoom (press E).',
+    es: 'Bienvenido a la Clínica Dr Baselga. Atiende a 15 pacientes distintos con sus 15 síntomas únicos y 15 pistas clínicas especializadas. Examina su dentadura con el zoom de 3 pasos (pulsa E).',
   },
   welcomeText2: {
     en: 'Careful! Symptoms are sometimes deceptive. Choose precisely between Filling, Extraction and Root canal.',
@@ -46,7 +46,7 @@ const STRINGS = {
     en: 'The game ends if your balance drops below zero (< 0).',
     es: 'La partida finaliza si tu saldo cae por debajo de cero (< 0).',
   },
-  openClinic: { en: 'Open the Aurora Dental Clinic', es: 'Abrir la Clínica Dental Aurora' },
+  openClinic: { en: 'Open the Dr Baselga Clinic', es: 'Abrir la Clínica Dr Baselga' },
   tFilling: { en: 'Filling', es: 'Empaste' },
   tFillingSub: { en: 'For cavities', es: 'Para caries' },
   tExtraction: { en: 'Extraction', es: 'Extracción' },
@@ -114,7 +114,7 @@ interface LangCtx {
 const Ctx = createContext<LangCtx>({ lang: 'en', setLang: () => {}, t: (k) => STRINGS[k].en });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>('es');
   const t = (k: StringKey) => STRINGS[k][lang];
   return <Ctx.Provider value={{ lang, setLang, t }}>{children}</Ctx.Provider>;
 }
