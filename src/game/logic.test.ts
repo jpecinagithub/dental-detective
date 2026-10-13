@@ -12,15 +12,15 @@ import {
 import type { GameState } from './logic';
 
 describe('cases data integrity', () => {
-  it('has exactly 15 unique cases', () => {
-    expect(CASES).toHaveLength(15);
-    expect(new Set(CASES.map((c) => c.id)).size).toBe(15);
+  it('has exactly 10 unique cases', () => {
+    expect(CASES).toHaveLength(10);
+    expect(new Set(CASES.map((c) => c.id)).size).toBe(10);
   });
 
-  it('uses each treatment exactly 5 times', () => {
+  it('uses each treatment a balanced number of times', () => {
     const counts: Record<string, number> = {};
     for (const c of CASES) counts[c.treatment] = (counts[c.treatment] ?? 0) + 1;
-    expect(counts).toEqual({ filling: 5, extraction: 5, rootcanal: 5 });
+    expect(counts).toEqual({ filling: 4, extraction: 3, rootcanal: 3 });
   });
 
   it('every case has non-empty bilingual texts and a valid tooth index', () => {
@@ -50,7 +50,7 @@ describe('game logic', () => {
     expect(g.balance).toBe(START_BALANCE);
     expect(g.index).toBe(0);
     expect(g.status).toBe('playing');
-    expect(g.order).toHaveLength(15);
+    expect(g.order).toHaveLength(10);
     expect(currentCase(g, CASES).id).toBe(g.order[0]);
   });
 
@@ -88,15 +88,15 @@ describe('game logic', () => {
     expect(g.status).toBe('lost');
   });
 
-  it('ends the game as won after the 15th case with non-negative balance', () => {
+  it('ends the game as won after the 10th case with non-negative balance', () => {
     let g = newGame(CASES);
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 10; i++) {
       const c = currentCase(g, CASES);
       g = answer(g, CASES, c.treatment);
     }
     expect(g.status).toBe('won');
-    expect(g.balance).toBe(START_BALANCE + 15 * CORRECT_POINTS);
-    expect(g.correct).toBe(15);
+    expect(g.balance).toBe(START_BALANCE + 10 * CORRECT_POINTS);
+    expect(g.correct).toBe(10);
   });
 
   it('ignores answers after the game ended', () => {

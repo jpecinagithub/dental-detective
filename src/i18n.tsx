@@ -11,7 +11,7 @@ const STRINGS = {
     en: 'Examine dental patients, decode deceptive clues, and choose the right treatment to cure tricky teeth and rack up points.',
     es: 'Examina pacientes dentales, descifra pistas engañosas y elige el tratamiento correcto para curar dientes difíciles y sumar puntos.',
   },
-  tagCases: { en: '15 cases', es: '15 casos' },
+  tagCases: { en: '10 cases', es: '10 casos' },
   tagPlayers: { en: '1 player', es: '1 jugador' },
   tagGenre: { en: 'Puzzle', es: 'Puzzle' },
   playNow: { en: 'Play now', es: 'Jugar ahora' },
@@ -31,8 +31,8 @@ const STRINGS = {
   welcomeTitle: { en: 'CLÍNICA DR BASELGA', es: 'CLÍNICA DR BASELGA' },
   welcomeSubtitle: { en: 'DENTAL DETECTIVE 3D', es: 'DENTAL DETECTIVE 3D' },
   welcomeText1: {
-    en: 'Welcome to the Dr Baselga Clinic. Treat 15 different patients with their 15 unique symptoms and 15 specialized clinical clues. Examine their teeth with the 3-step zoom (press E).',
-    es: 'Bienvenido a la Clínica Dr Baselga. Atiende a 15 pacientes distintos con sus 15 síntomas únicos y 15 pistas clínicas especializadas. Examina su dentadura con el zoom de 3 pasos (pulsa E).',
+    en: 'Welcome to the Dr Baselga Clinic. Treat 10 different patients with their 10 unique symptoms and 10 specialized clinical clues. Examine their teeth with the 3-step zoom (press E).',
+    es: 'Bienvenido a la Clínica Dr Baselga. Atiende a 10 pacientes distintos con sus 10 síntomas únicos y 10 pistas clínicas especializadas. Examina su dentadura con el zoom de 3 pasos (pulsa E).',
   },
   welcomeText2: {
     en: 'Careful! Symptoms are sometimes deceptive. Choose precisely between Filling, Extraction and Root canal.',
@@ -65,8 +65,8 @@ const STRINGS = {
   },
   victory: { en: 'Clinic complete!', es: '¡Clínica completada!' },
   victoryText: {
-    en: 'You treated all 15 patients. The waiting room applauds you.',
-    es: 'Has atendido a los 15 pacientes. La sala de espera te aplaude.',
+    en: 'You treated all 10 patients. The waiting room applauds you.',
+    es: 'Has atendido a los 10 pacientes. La sala de espera te aplaude.',
   },
   finalScore: { en: 'Final score', es: 'Puntuación final' },
   accuracy: { en: 'Accuracy', es: 'Precisión' },
@@ -95,8 +95,8 @@ const STRINGS = {
     es: 'Elige un tratamiento: teclas 1, 2, 3 o los botones. +30 por acierto, −50 por fallo.',
   },
   guide4: {
-    en: 'Treat all 15 patients without dropping below zero points.',
-    es: 'Atiende a los 15 pacientes sin caer por debajo de cero puntos.',
+    en: 'Treat all 10 patients without dropping below zero points.',
+    es: 'Atiende a los 10 pacientes sin caer por debajo de cero puntos.',
   },
   close: { en: 'Close', es: 'Cerrar' },
   developedBy: { en: 'Developed by Jon Peciña Iturbe', es: 'Desarrollado por Jon Peciña Iturbe' },

@@ -2,6 +2,7 @@ export interface ScoreEntry {
   name: string;
   score: number;
   correct: number;
+  total: number;
   date: string;
 }
 

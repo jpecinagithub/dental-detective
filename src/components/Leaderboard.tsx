@@ -1,3 +1,4 @@
+import { CASES } from '../game/cases';
 import { loadScores } from '../game/scores';
 import { useLang } from '../i18n';
 
@@ -27,7 +28,7 @@ export default function Leaderboard({ onBack }: { onBack: () => void }) {
                   <td>{i + 1}</td>
                   <td>{s.name}</td>
                   <td><strong>{s.score}</strong></td>
-                  <td>{Math.round((s.correct / 15) * 100)}%</td>
+                  <td>{Math.round((s.correct / (s.total || CASES.length)) * 100)}%</td>
                   <td>{s.date}</td>
                 </tr>
               ))}

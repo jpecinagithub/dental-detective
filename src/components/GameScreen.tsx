@@ -243,6 +243,7 @@ export default function GameScreen({ onExit }: { onExit: () => void }) {
                         name: name.trim(),
                         score: game.balance,
                         correct: game.correct,
+                        total: CASES.length,
                         date: new Date().toISOString().slice(0, 10),
                       });
                       setSaved(true);

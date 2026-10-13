@@ -2,7 +2,7 @@
 
 Original-IP dental diagnosis puzzle game (Vite + React + TypeScript, no backend).
 
-Examine 15 patients, decode deceptive symptoms with the help of clinical clues,
+Examine 10 patients, decode deceptive symptoms with the help of clinical clues,
 inspect mouths with the 3-step zoom (E), and choose the right treatment:
 **Filling** (1), **Extraction** (2) or **Root canal** (3).
 
