@@ -6,7 +6,7 @@ import type { GameState } from '../game/logic';
 import { loadScores, saveScore } from '../game/scores';
 import { treatmentName, useLang } from '../i18n';
 import type { Lang } from '../i18n';
-import ClinicScene from './ClinicScene';
+import ClinicScene3D from './ClinicScene3D';
 
 type Phase = 'welcome' | 'case' | 'reveal' | 'end';
 
@@ -161,12 +161,7 @@ export default function GameScreen({ onExit }: { onExit: () => void }) {
       {(phase === 'case' || phase === 'reveal') && (
         <>
           <main className="game-main">
-            <ClinicScene
-              dentalCase={activeCase}
-              zoom={zoom}
-              clinicName={t('clinicName')}
-              signSub={lang === 'es' ? 'Odontología & cirugía avanzada' : 'Odontology & advanced surgery'}
-            />
+            <ClinicScene3D dentalCase={activeCase} zoom={zoom} />
             <PatientCard dentalCase={activeCase} patientNo={patientNo} total={CASES.length} hidden={hidden} />
           </main>
 

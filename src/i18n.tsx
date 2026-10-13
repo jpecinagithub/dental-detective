@@ -87,8 +87,8 @@ const STRINGS = {
     es: 'Lee el síntoma del paciente y la pista clínica. Los síntomas pueden engañar; la pista dice la verdad.',
   },
   guide2: {
-    en: 'Use the 3-step zoom (button or key E) to examine the mouth closely.',
-    es: 'Usa el zoom de 3 pasos (botón o tecla E) para examinar la boca de cerca.',
+    en: 'Use the 3-step zoom (button or E key) to get close; then use W/S to zoom freely, arrow keys to orbit, R to reset the camera.',
+    es: 'Usa el zoom de 3 pasos (botón o tecla E) para acercarte; después W/S para zoom libre, flechas para girar y R para centrar la cámara.',
   },
   guide3: {
     en: 'Pick a treatment: keys 1, 2, 3 or the buttons. +30 for a hit, −50 for a miss.',
