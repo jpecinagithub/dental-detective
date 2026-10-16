@@ -1,6 +1,6 @@
 import type { DentalCase, Treatment } from './cases';
 
-export const START_BALANCE = 125;
+export const START_BALANCE = 155;
 export const CORRECT_POINTS = 30;
 export const WRONG_POINTS = -50;
 
