@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { CASES } from '../game/cases';
 import type { DentalCase, Treatment } from '../game/cases';
 import { answer, currentCase, newGame } from '../game/logic';
@@ -7,6 +7,7 @@ import { loadScores, saveScore } from '../game/scores';
 import { treatmentName, useLang } from '../i18n';
 import type { Lang } from '../i18n';
 import ClinicScene3D from './ClinicScene3D';
+import { startMusic, stopMusic, setMuted as setMusicMuted, isMuted as isMusicMuted } from '../game/music';
 
 type Phase = 'welcome' | 'case' | 'reveal' | 'end';
 
@@ -87,6 +88,18 @@ export default function GameScreen({ onExit }: { onExit: () => void }) {
   const [hidden, setHidden] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const [name, setName] = useState('');
+  const [mutedUi, setMutedUi] = useState(isMusicMuted());
+
+  useEffect(() => {
+    startMusic();
+    return () => stopMusic();
+  }, []);
+
+  const toggleMute = useCallback(() => {
+    const m = !mutedUi;
+    setMusicMuted(m);
+    setMutedUi(m);
+  }, [mutedUi]);
   const [saved, setSaved] = useState(false);
 
   const activeCase = CASES.find((c) => c.id === caseId) as DentalCase;
@@ -155,6 +168,14 @@ export default function GameScreen({ onExit }: { onExit: () => void }) {
         <button className={`chip chip-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
         <button className={`chip chip-btn ${lang === 'es' ? 'active' : ''}`} onClick={() => setLang('es')}>ES</button>
         <button className="chip chip-btn" onClick={() => setShowGuide(true)}>❓ {t('guide')}</button>
+        <button
+          className="chip chip-btn"
+          onClick={toggleMute}
+          title={lang === 'es' ? 'Activar/silenciar música' : 'Mute/unmute music'}
+          aria-label={lang === 'es' ? 'Activar/silenciar música' : 'Mute/unmute music'}
+        >
+          {mutedUi ? '🔇' : '🔊'}
+        </button>
         <button className="chip chip-btn chip-menu" onClick={onExit}>☰ {t('menu')}</button>
       </header>
 
