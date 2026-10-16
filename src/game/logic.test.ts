@@ -79,11 +79,15 @@ describe('game logic', () => {
     let g = newGame(CASES);
     const c1 = currentCase(g, CASES);
     const wrong = c1.treatment === 'filling' ? 'extraction' : 'filling';
-    g = answer(g, CASES, wrong); // 75 - 50 = 25
+    g = answer(g, CASES, wrong); // 125 - 50 = 75
     expect(g.status).toBe('playing');
     const c2 = currentCase(g, CASES);
     const wrong2 = c2.treatment === 'filling' ? 'extraction' : 'filling';
-    g = answer(g, CASES, wrong2); // 25 - 50 = -25
+    g = answer(g, CASES, wrong2); // 75 - 50 = 25
+    expect(g.status).toBe('playing');
+    const c3 = currentCase(g, CASES);
+    const wrong3 = c3.treatment === 'filling' ? 'extraction' : 'filling';
+    g = answer(g, CASES, wrong3); // 25 - 50 = -25
     expect(g.balance).toBe(-25);
     expect(g.status).toBe('lost');
   });

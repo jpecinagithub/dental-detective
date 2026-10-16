@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { CASES } from '../game/cases';
 import type { DentalCase, Treatment } from '../game/cases';
-import { answer, currentCase, newGame } from '../game/logic';
+import { answer, currentCase, newGame, START_BALANCE } from '../game/logic';
 import type { GameState } from '../game/logic';
 import { loadScores, saveScore } from '../game/scores';
 import { treatmentName, useLang } from '../i18n';
@@ -22,7 +22,7 @@ function WelcomeModal({ onStart }: { onStart: () => void }) {
         <p>{t('welcomeText1')}</p>
         <p className="warn">{t('welcomeText2')}</p>
         <div className="score-box">
-          <div className="score-row"><span>💰 {t('startBalance')}:</span><strong className="gold">75 {t('points')}</strong></div>
+          <div className="score-row"><span>💰 {t('startBalance')}:</span><strong className="gold">{START_BALANCE} {t('points')}</strong></div>
           <div className="score-row"><span>✅ {t('correctDx')}:</span><strong className="green">+30 {t('points')}</strong></div>
           <div className="score-row"><span>❌ {t('wrongDx')}:</span><strong className="red">−50 {t('points')}</strong></div>
           <p className="score-note">{t('endsBelowZero')}</p>
